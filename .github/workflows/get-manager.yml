@@ -72,7 +72,7 @@ jobs:
 
           echo "Found $(echo "$ARTIFACTS" | jq '.artifacts | length') artifacts."
 
-          DOWNLOAD_URL=$(echo "$ARTIFACTS" | jq -r '.artifacts[] | select(.name | contains("Manager")) | .archive_download_url')
+          DOWNLOAD_URL=$(echo "$ARTIFACTS" | jq -r '.artifacts[] | select(.name | contains("manager")) | .archive_download_url')
           echo "DOWNLOAD_URL=$DOWNLOAD_URL"
 
           if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" == "null" ]; then
